@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+:root{
+    --stratos: #001b48;
+    --regal-blue: #02457a;
+    --bondi-blue: #017abe;
+    --glory: #97cadb;
+    --botticelli: #d6e8ee;
+}
+
+html{
+    font-size: 10px;
+}
+
+body{
+    background: #97cadb;
+}
+
+header{
+    background-color: var(--botticelli);
+    border-bottom: 2px solid var(--regal-blue);
+    padding: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 10vh;
+}
+
+.logo{
+    font-size: 3em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img{
+    width: 50px;
+}
+
+nav{
+    display: flex;
+    position: relative;
+}
+
+.box-search{
+    display: flex;
+}
+
+#search{
+    background: none;
+    border: none;
+    border-bottom: 2px solid var(--stratos);
+    height: 2.5em;
+    padding: 3% ;
+    caret-color: var(--stratos);
+    font-size: 1.8em;
+}
+
+.box-search button{
+    border: none;
+    background: none;
+    width: 30px;
+    height:2.5em;
+    cursor: pointer;
+    transition: .5s;
+}
+
+section{
+    width: 100%;
+    height: 90vh;
+    padding: 5%;
+    background-image: url('/img/pexels-aaron-burden-2449543.jpg');
+    background-size: cover;
+}
+
+.card-weather{
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 3%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.info-weather{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-weather h2{
+   font-size: 3.5em;
+   color: var(--regal-blue);
+}
+
+.info-weather p, .img-weather{
+    font-size: 1.6em;
+ }
+
+.img-weather{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+ }
+
+.img-weather #icon{
+    width: 150px;
+ }
+
+ul {
+    list-style: none;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 99999;
+}
+
+li:hover {
+    background-color: #f0f0f0;
+}
+
+@media only screen and (max-width: 500px){
+    header{
+        flex-direction: column;
+        height: 20vh;
+    }
+
+    section{
+        height: 80vh;
+    }
+    
+    .card-weather{
+        flex-direction: column;
+    }
+
+    .info-weather, .img-weather{
+        width: 100%;
+    }
+}

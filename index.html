@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1 class="logo">
+                Weather <img src="img/icons8-partly-cloudy-day-100.png" alt="" class="logo-img">
+            </h1>
+            <nav class="box-search">
+                <input type="search" id="search" v-model="valorDoInput" @input="buscarSugestoes">
+                <ul v-if="sugestoes.length">
+                    <li v-for="sugestao in sugestoes" :key="sugestao.id" @click="selecionarSugestao(sugestao)">
+                        {{ sugestao.name }}, {{ sugestao.region }}, {{ sugestao.country }}
+                    </li>
+                </ul>
+
+
+                <button id="inputPais" @click="obterValorDoInput">
+                    <img src="img/icon/icons8-search-30.png" alt="" id="img-search">
+                </button>            
+            </nav>
+        </header>
+
+        <section>
+            <article class="card-weather">
+                <div class="info-weather">
+                    <h2 class="local">{{ location }}</h2>
+                    <p>{{ country }}</p>
+                    <p>{{ localtime }}</p>
+                    <p>Temperature: {{ temperature }} ºC</p>
+                    <p>Sensation: {{ sensation }} ºC</p>
+                    <p>Uv: {{uv}}</p>
+                    <p>Wind: {{ wind }}</p>
+                    <p>Humidity: {{ humidity }}</p>
+                </div>
+
+                <div class="img-weather">
+                    <img v-bind:src = "icon" alt="" id="icon">
+                    <p>{{ condition }}</p>
+                </div>
+            </article>
+        </section>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

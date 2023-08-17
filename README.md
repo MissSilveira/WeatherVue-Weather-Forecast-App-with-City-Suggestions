@@ -1,1 +1,1 @@
-# WeatherVue-Weather-Forecast-App-with-City-Suggestions
+WeatherVue is a weather forecast web application built using Vue.js that provides real-time weather information for cities around the world. It features an intuitive user interface, displaying current weather conditions, temperature, wind speed, humidity, and more. Additionally, it offers city suggestions as you type in the search bar, making it easy to find the weather details for your desired location.
